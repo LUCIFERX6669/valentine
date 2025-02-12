@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Surprise</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #heart {
+            width: 150px;
+            height: 150px;
+            margin-top: 50px;
+        }
+
+        #message {
+            font-size: 24px;
+            font-weight: bold;
+            color: magenta;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background-color: lightgreen;
+        }
+
+        #noBtn {
+            background-color: red;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine? ❤️</h1>
+
+    <img id="heart" src="heart.png" alt="Heart">
+
+    <div>
+        <button id="yesBtn" class="btn" onclick="showLoveMessage()">Yes</button>
+        <button id="noBtn" class="btn" onclick="changeNoText()">No</button>
+    </div>
+
+    <p id="message">THANK YOU SO MUCH! I LOVE YOU! 💖</p>
+
+    <script>
+        let noTexts = [
+            "Please?", 
+            "I will be sad :(", 
+            "Pookie, please!", 
+            "Don't break my heart :(", 
+            "One more chance!"
+        ];
+        let noIndex = 0;
+
+        function showLoveMessage() {
+            document.getElementById("message").style.display = "block";
+        }
+
+        function changeNoText() {
+            let noBtn = document.getElementById("noBtn");
+            noBtn.innerText = noTexts[noIndex];
+            noIndex = (noIndex + 1) % noTexts.length;
+        }
+    </script>
+
+</body>
+</html>
